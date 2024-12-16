@@ -159,8 +159,8 @@ console.log(`I will need ${galB} gallons of fuel for the entire trip driving ${m
 console.log(`I will need ${galC} gallons of fuel for the entire trip driving ${mphC} miles per hour. The cost of my trip is ${costc}.\n 
     Is this trip within my spending budget of $budget? Answer: ${answerC}`);
   
-  
-console.log(`The best plan for this trip is to get ${bestGasAmmount} for ${bestFuel} dollars.  This will allow me to\n achieve my destination in ${bestTrip} hours and spend ${bestBudget} dollars`);
+console.log(`The best plan for this trip is to get ${bestGasAmmount} for ${bestFuel} dollars.  This will allow me to\n achieve my destination in ${bestTrip}\n
+   hours and spend ${bestBudget} dollars`);
 
 
 // Check one: add up to 50
