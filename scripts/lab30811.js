@@ -181,64 +181,86 @@ const budget = 175.00;
 //How many gallons of fuel will you need for the entire trip?
 const galA = distance / mpgA;/*gallons of gas needed for the trip*/
 const galB = distance / mpgB;/*gallons of gas needed for the trip*/
-console.log("distance times mpg B = ", galB);
 const galC = distance / mpgC;/*gallons of gas needed for the trip*/
-const galARound = Math.round(galA);
+console.log("distance times mpgA for gallons of gas before rounding = ", galA);
+console.log("distance times mpgB for gallons of gas before rounding = ", galB);
+console.log("distance times mpgC for gallons of gas before rounding = ", galC);
+
+
+const galARound = Math.round(galA);//round gallons of gas A
 const galBRound = Math.round(galB);
 const galCRound = Math.round(galC);
-console.log("galA before rounding", galARound);
-console.log("galA before rounding", galBRound);
-console.log("galA before rounding", galCRound);
+console.log("galA gallons of gas needed after rounding", galARound);
+console.log("galB gallons of gas needed after rounding", galBRound);
+console.log("galC gallons of gas needed after rounding", galCRound);
+console.log(" ");
 //least amount of gas compared between each driving mpg needed for trip
 const bestGasAmount = Math.min(galA,galB,galC);//This code uses the Math.min function to find the smallest amount of gallons of gas to complete the trip
+console.log("best fuel cost compared to all 3 mpg equations", bestGasAmount);
+console.log(" ");
 
-//Fuel cost
+//Calculate Total Fuel cost for each mph trip
 const costA = galARound * fuelCost;//cost of gas driving 55 mph
 const costB = galBRound * fuelCost;//cost of gas driving 60 mph
 const costC = galCRound * fuelCost;//cost of gas driving 75 mph
 
-//use the Math.round function to round up cost of gas
-// const bestGalRoundA = Math.round(costA);
-// const bestGalRoundB = Math.round(costB);
-// const bestGalRoundC = Math.round(costC);
+console.log("cost of gasARound using galARound * fuelCost equation is ", costA);
+console.log("cost of gasBRound using galARound * fuelCost equation is ", costB);
+console.log("cost of gasCRound using galARound * fuelCost equation is ", costC);
 
-//smallest cost of fuel for trip
+console.log(" ");
+//smallest cost of fuel compared to all the trips
 const bestFuel = Math.min( costA,costB,costC);//This code uses the Math.min function to find the least cost for fuel
 const bestFuelRound = Math.round(bestFuel);
+console.log("Trip with cheapest gas cost is ", bestFuelRound);
+console.log("");
 
 //How long will the trip take, in hours?
 tripTimeA = distance / mphA;
 tripTimeB = distance / mphB;
 tripTimeC = distance / mphC;
+console.log("The time for tripA before rounding is " + tripTimeA);
+console.log("The time for tripB before rounding is " + tripTimeB);
+console.log("The time for tripC before rounding is " + tripTimeC);
+console.log(" ");
 //use Math.min function to round up trip Time
 const bestTripRoundA = Math.round(tripTimeA);
 const bestTripRoundB = Math.round(tripTimeB);
 const bestTripRoundC = Math.round(tripTimeC);
+console.log("The time for tripA after rounding is " + bestTripRoundA);
+console.log("The time for tripB after rounding is " + bestTripRoundB);
+console.log("The time for tripC after rounding is " + bestTripRoundC);
 
+console.log(" ");
 //Calculate Fastest trip time using Math.min function and round up number using Math.round
 const bestTrip = Math.min( tripTimeA,tripTimeB,tripTimeC);//This code uses the Math.min function to find the smallest number result for trip time.
 const bestTripRound = Math.round(bestTrip);
+console.log("Lowest Trip Travel time is ", bestTripRound);
+console.log(" ");
 
-
-//Subtract the cost of fuel from the budget to see if you are within your budget
+//Subtract the cost of fuel(costA,costB,costC) from the budget to see if you are within your budget
 balanceOfmoneyLeftA = budget - costA;//budget for gas driving 55ph - cost of gas
 balanceOfmoneyLeftB= budget - costB;//budget for gas driving 60 mph - cost of gas
 balanceOfmoneyLeftC= budget - costC;//budget for gas driving 75 mph - cost of gas
+console.log("Aount of money left after purchasing gas for tripA is ", balanceOfmoneyLeftA);
+console.log("Aount of money left after purchasing gas for tripB is ", balanceOfmoneyLeftB);
+console.log("Aount of money left after purchasing gas for tripC is ", balanceOfmoneyLeftC);
 //use Math.round to round up the cost left over
-const answerRoundA = Math.round(balanceOfmoneyLeftA);
-const answerRoundB = Math.round(balanceOfmoneyLeftB);
-const answerRoundC = Math.round(balanceOfmoneyLeftC);
+// const answerRoundA = Math.round(balanceOfmoneyLeftA);
+// const answerRoundB = Math.round(balanceOfmoneyLeftB);
+// const answerRoundC = Math.round(balanceOfmoneyLeftC);
+console.log(" ");
 
-// compare budget with cost of gas and console log 'yes' or no answer
+// compare budget amount with cost of gas and console log 'yes' or 'no' if within budget or not
 let answerOut = "NO";
-console.log("Budget = ", budget);
+// console.log("Budget = ", budget);
     
-console.log("cost A = ", balanceOfmoneyLeftA);
-console.log("cost B = ", balanceOfmoneyLeftB);
-console.log("cost C = ", balanceOfmoneyLeftC);
+// console.log("cost A = ", balanceOfmoneyLeftA);
+// console.log("cost B = ", balanceOfmoneyLeftB);
+// console.log("cost C = ", balanceOfmoneyLeftC);
 
 // Will your budget be enough to cover the fuel expense?
-if (budget > costA) {
+if (budget >= costA) {
     
   answerOut = "YES"; // cost for trip A is within budget
 } else {
