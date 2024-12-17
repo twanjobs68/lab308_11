@@ -159,7 +159,7 @@ console.log("");
 // At 60 miles per hour, you get 28 miles per gallon.
 // At 75 miles per hour, you get 23 miles per gallon.
 // You have a fuel budget of $175.
-// The average cost of fuel is $3 per gallon.
+// The average gasCost of fuel is $3 per gallon.
 // Set up a program to answer the following questions:
 // How many gallons of fuel will you need for the entire trip?
 // Will your budget be enough to cover the fuel expense?
@@ -175,7 +175,7 @@ const mphC = 75;
 const mpgA = 30;
 const mpgB = 28;
 const mpgC = 23;
-let fuelCost = 3.00;
+let fuelgasCost = 3.00;
 const budget = 175.00;
 
 //How many gallons of fuel will you need for the entire trip?
@@ -196,23 +196,23 @@ console.log("galC gallons of gas needed after rounding", galCRound);
 console.log(" ");
 //least amount of gas compared between each driving mpg needed for trip
 const bestGasAmount = Math.min(galA,galB,galC);//This code uses the Math.min function to find the smallest amount of gallons of gas to complete the trip
-console.log("best fuel cost compared to all 3 mpg equations", bestGasAmount);
+console.log("best fuel gasCost compared to all 3 mpg equations", bestGasAmount);
 console.log(" ");
 
-//Calculate Total Fuel cost for each mph trip
-const costA = galARound * fuelCost;//cost of gas driving 55 mph
-const costB = galBRound * fuelCost;//cost of gas driving 60 mph
-const costC = galCRound * fuelCost;//cost of gas driving 75 mph
+//Calculate Total Fuel gasCost for each mph trip
+const gasCostA = galARound * fuelgasCost;//gasCost of gas driving 55 mph
+const gasCostB = galBRound * fuelgasCost;//gasCost of gas driving 60 mph
+const gasCostC = galCRound * fuelgasCost;//gasCost of gas driving 75 mph
 
-console.log("cost of gasARound using galARound * fuelCost equation is ", costA);
-console.log("cost of gasBRound using galARound * fuelCost equation is ", costB);
-console.log("cost of gasCRound using galARound * fuelCost equation is ", costC);
+console.log("gasCost of gasARound using galARound * fuelgasCost equation is ", gasCostA);
+console.log("gasCost of gasBRound using galBRound * fuelgasCost equation is ", gasCostB);
+console.log("gasCost of gasCRound using galCRound * fuelgasCost equation is ", gasCostC);
 
 console.log(" ");
-//smallest cost of fuel compared to all the trips
-const bestFuel = Math.min( costA,costB,costC);//This code uses the Math.min function to find the least cost for fuel
+//smallest gasCost of fuel compared to all the trips
+const bestFuel = Math.min( gasCostA,gasCostB,gasCostC);//This code uses the Math.min function to find the least gasCost for fuel
 const bestFuelRound = Math.round(bestFuel);
-console.log("Trip with cheapest gas cost is ", bestFuelRound);
+console.log("Trip with cheapest gas gasCost is ", bestFuelRound);
 console.log("");
 
 //How long will the trip take, in hours?
@@ -238,75 +238,87 @@ const bestTripRound = Math.round(bestTrip);
 console.log("Lowest Trip Travel time is ", bestTripRound);
 console.log(" ");
 
-//Subtract the cost of fuel(costA,costB,costC) from the budget to see if you are within your budget(Amount of money left over after purchasing gas)
-balanceOfmoneyLeftA = budget - costA;//budget for gas driving 55ph - cost of gas
-balanceOfmoneyLeftB= budget - costB;//budget for gas driving 60 mph - cost of gas
-balanceOfmoneyLeftC= budget - costC;//budget for gas driving 75 mph - cost of gas
+//Subtract the gasCost of fuel(gasCostA,gasCostB,gasCostC) from the budget to see if you are within your budget(Amount of money left over after purchasing gas)
+balanceOfmoneyLeftA = budget - gasCostA;//budget for gas driving 55ph - gasCost of gas
+balanceOfmoneyLeftB= budget - gasCostB;//budget for gas driving 60 mph - gasCost of gas
+balanceOfmoneyLeftC= budget - gasCostC;//budget for gas driving 75 mph - gasCost of gas
 console.log("Aount of money left after purchasing gas for tripA is ", balanceOfmoneyLeftA);
 console.log("Aount of money left after purchasing gas for tripB is ", balanceOfmoneyLeftB);
 console.log("Aount of money left after purchasing gas for tripC is ", balanceOfmoneyLeftC);
-//use Math.round to round up the cost left over
+//use Math.round to round up the gasCost left over
 // const answerRoundA = Math.round(balanceOfmoneyLeftA);
 // const answerRoundB = Math.round(balanceOfmoneyLeftB);
 // const answerRoundC = Math.round(balanceOfmoneyLeftC);
 console.log(" ");
 
-// compare budget amount with cost of gas and console log 'yes' or 'no' if within budget or not
+// compare budget amount with gasCost of gas and console log 'yes' or 'no' if within budget or not
 
   
 // console.log(`OH NO!!! I'm over my budget!!My balance after purchasing gas is ${balanceOfmoneyLeftA}.`);
 // console.log(`OH NO!!! I'm over my budget!!My balance after purchasing gas is ${balanceOfmoneyLeftB}.`);
 // console.log(`OH NO!!! I'm over my budget!! My balance after purchasing gas is ${balanceOfmoneyLeftC}.`);
 
-// Will your budget be enough to cover the fuel expense? compare cost of gas to budget allowed  150 175
-let answerOut = "YES";//Every cost is within budget by default
+// Will your budget be enough to cover the fuel expense? compare gasCost of gas to budget allowed  150 175
+let answerOut = "YES"; // Assume every gasCost is within budget by default
 
-if (costA > budget  || costA < 0) {
+// Check if gasCostA is Over-budget or is negative
+if (gasCostA > budget || gasCostA < 0) {
+  answerOut = "NO"; // gasCost for trip A is over budget
+  console.log("Gas Cost A = ", gasCostA + "and my budget is " + budget);
+  console.log("Answer out am I over my budget for gas Cost A = ", answerOut);
+  console.log(`OH NO!!! The gasCost of this trip is $${gasCostA}! I'm over my budget!! My balance after purchasing gas is ${balanceOfmoneyLeftA}.`);
+  console.log(`I will need ${galARound} gallons of fuel for the entire trip driving ${mphA} miles per hour. Driving time would equal ${bestTripRoundA} hours. The gasCost of my trip is $${gasCostA}.\n 
+    Is this trip within my spending budget of $${budget}? Answer: ${answerOut} Money left over after buying gas ${balanceOfmoneyLeftA}`);
     
-  answerOut = "NO"; // cost for trip A is over budget
-  console.log("Cost A = ", costA);
-  console.log("Budget = ",budget);
-  console.log("Answer out costA = ", answerOut);
-  console.log(`OH NO!!! The cost of this trip is $${costA}! I'm over my budget!!My balance after purchasing gas is ${balanceOfmoneyLeftA}.`);
+  console.log(" ");
 } 
-else if (costB > budget || costB < 0) {
-    console.log("cost B = ", costB);
-    console.log("Budget = ",budget);
-    answerOut = "NO"; // cost for trip B is over budget
-    console.log("Answer out costB = ", answerOut);
-    console.log(`OH NO!!! The cost of this trip is $${costB}! I'm over my budget!!My balance after purchasing gas is $${balanceOfmoneyLeftB}.`);
 
-  } else if(costC > budget || costC < 0) {
-    console.log("cost C = ", costC);
-    console.log("Budget = ",budget);
-    answerOut = "NO"; // cost for trip C is over budget
-    console.log("Answer out costC = ", answerOut);
-    console.log(`OH NO!!! The  cost of this trip is $${costC}! I'm over my budget!! My balance after purchasing gas is $${balanceOfmoneyLeftC}.`);
+// Check if gasCostB is Over-budget or is negative
+if (gasCostB > budget || gasCostB < 0) {
+  answerOut = "NO"; // gasCost for trip B is over budget
+  console.log("Gas Cost B = ", gasCostB + "and my budget is "+ budget);
+  console.log("Answer out am I over my budget for gas Cost B = ", answerOut);
+  console.log(`OH NO!!! The gasCost of this trip is $${gasCostB}! I'm over my budget!! My balance after purchasing gas is $${balanceOfmoneyLeftB}.`);
+  console.log(`I will need ${galBRound} gallons of fuel for the entire trip driving ${mphB} miles per hour. Driving time would equal ${bestTripRoundB} hours. The gasCost of my trip is $${gasCostB}.\n 
+    Is this trip within my spending budget of $budget? Answer: ${answerOut} Money left over after buying gas ${balanceOfmoneyLeftB}`);
+  console.log(" ");
+} 
 
+// Check if gasCostC is Over-budget or is negative
+if (gasCostC > budget || gasCostC < 0) {
+  answerOut = "NO"; // gasCost for trip C is over budget
+  console.log("Gas Cost C = ", gasCostC + "and my budget is " + budget);
+  console.log("Answer out gasCostC = ", answerOut);
+  console.log(`OH NO!!! The gasCost of this trip is $${gasCostC}! I'm over my budget!! My balance after purchasing gas is $${balanceOfmoneyLeftC}.`);
+  console.log(`I will need ${galCRound} gallons of fuel for the entire trip driving ${mphC} miles per hour. Driving time would equal ${bestTripRoundC} hours. The gasCost of my trip is $${gasCostC}.\n 
+    Is this trip within my spending budget of $budget? Answer: ${answerOut} Money left over after buying gas ${balanceOfmoneyLeftC}`);
+} 
 
-  } else {
-    console.log("All Trip cost are within Budget!");
-    console.log("I'm within my budget!!", answerOut);
-  }
+// If none of the gasCosts are over-budget or negative, then gasCost is within the budget
+if (answerOut === "YES") {
+  console.log("All Trip gasCosts are within Budget!");
+  console.log("I'm within my budget!!", answerOut);
+  console.log(`The best plan for this trip is to get ${bestGasAmount} gallons of gas for ${bestFuel} dollars.`);
+}
 
-// if (costA > budget || costA < 0 || costB > budget || costB < 0 || costC > budget || costC < 0) {
-//     answerOut = "NO"; // If any cost is over budget or negative, set answerOut to "NO"
+// if (gasCostA > budget || gasCostA < 0 || gasCostB > budget || gasCostB < 0 || gasCostC > budget || gasCostC < 0) {
+//     answerOut = "NO"; // If any gasCost is over budget or negative, set answerOut to "NO"
 //   }
 
 //least amount of money needed for trip
-const bestBudget = Math.min( costA,costB,costC);//This code uses the Math.min function to compare the amount for each trip and check if in my budget
-const bestBudgetRound = Math.round(bestBudget);
+// const bestBudget = Math.min( gasCostA,gasCostB,gasCostC);//This code uses the Math.min function to compare the amount for each trip and check if in my budget
+// const bestBudgetRound = Math.round(bestBudget);
 
-console.log(`I will need ${galARound} gallons of fuel for the entire trip driving ${mphA} miles per hour. Driving time would equal ${bestTripRoundA} hours. The cost of my trip is $${costA}.\n 
-Is this trip within my spending budget of $${budget}? Answer: ${answerOut} Money left over after buying gas ${balanceOfmoneyLeftA}`);
+// console.log(`I will need ${galARound} gallons of fuel for the entire trip driving ${mphA} miles per hour. Driving time would equal ${bestTripRoundA} hours. The gasCost of my trip is $${gasCostA}.\n 
+// Is this trip within my spending budget of $${budget}? Answer: ${answerOut} Money left over after buying gas ${balanceOfmoneyLeftA}`);
 
-console.log(`I will need ${galBRound} gallons of fuel for the entire trip driving ${mphB} miles per hour. Driving time would equal ${bestTripRoundB} hours. The cost of my trip is $${costB}.\n 
-Is this trip within my spending budget of $budget? Answer: ${answerOut} Money left over after buying gas ${balanceOfmoneyLeftB}`);
+// console.log(`I will need ${galBRound} gallons of fuel for the entire trip driving ${mphB} miles per hour. Driving time would equal ${bestTripRoundB} hours. The gasCost of my trip is $${gasCostB}.\n 
+// Is this trip within my spending budget of $budget? Answer: ${answerOut} Money left over after buying gas ${balanceOfmoneyLeftB}`);
 
-console.log(`I will need ${galCRound} gallons of fuel for the entire trip driving ${mphC} miles per hour. Driving time would equal ${bestTripRoundC} hours. The cost of my trip is $${costC}.\n 
-Is this trip within my spending budget of $budget? Answer: ${answerOut} Money left over after buying gas ${balanceOfmoneyLeftC}`);
+// console.log(`I will need ${galCRound} gallons of fuel for the entire trip driving ${mphC} miles per hour. Driving time would equal ${bestTripRoundC} hours. The gasCost of my trip is $${gasCostC}.\n 
+// Is this trip within my spending budget of $budget? Answer: ${answerOut} Money left over after buying gas ${balanceOfmoneyLeftC}`);
  
-console.log(`The best plan for this trip is to get ${bestGasAmount} gallons of gas for ${bestFuel} dollars.`);
+// console.log(`The best plan for this trip is to get ${bestGasAmount} gallons of gas for ${bestFuel} dollars.`);
 
 
 
