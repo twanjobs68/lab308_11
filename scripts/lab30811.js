@@ -1,64 +1,92 @@
 //ALAB 308.1.1
-        //  Objectives
-        // Create variable declarations using both let and const.
-        // Apply different types of data literals.
-        // Use arithmetic operators to manipulate data.
-        // Use comparison operators to compare data.
-        // Perform string concatenations.
-        // Implement escape sequences in strings for special characters.
-        // Use template literals for string interpolation and multi-line strings.
-        // Create effective documentation through the use of comments.
+//  PART 1                 Objectives
+// Create variable declarations using both let and const.
+// Apply different types of data literals.
+// Use arithmetic operators to manipulate data.
+// Use comparison operators to compare data.
+// Perform string concatenations.
+// Implement escape sequences in strings for special characters.
+// Use template literals for string interpolation and multi-line strings.
+// Create effective documentation through the use of comments.
 
-        //1-Create variable declarations using both let and const.
+//1-Create variable declarations using both let and const.
 
-        let musicChartNum = 2;
-        let musicSequence = 5;
-        const musicType = "Gospel";
+let musicChartNum = 2;
+let musicSequence = 5;
+const musicType = "Gospel";
 
-        //2-Apply different types of data literals and  5-Perform string concatenations.
-        console.log(musicSequence + 10 + " is the number of the radio station I listen to.");
-        console.log("I've listened to church music since I turned " + musicSequence);
-        console.log("I love " + musicType + " music!");
-        console.log(`${musicType}, music is INSPIRING!`);
-        console.log(`I listen to ${musicType} in my car regularly!`);
-        console.log(`I listen to ${musicType} in my car regularly on channel ${musicSequence}.`);
+//2-Apply different types of data literals and  5-Perform string concatenations.
+console.log(
+  musicSequence + 10 + " is the number of the radio station I listen to."
+);
+console.log("I've listened to church music since I turned " + musicSequence);
+console.log("I love " + musicType + " music!");
+console.log(
+  `${musicType}, music is INSPIRING and number ${musicChartNum} on the Grant music chart!`
+);
+console.log(`I listen to ${musicType} in my car regularly!`);
+console.log(
+  `I listen to ${musicType} in my car regularly on channel ${musicSequence}.`
+);
+console.log(" ");
+// genre and new artist are accessed outside of the object "person".
+// The console log use the "\n" escape sequences to display text in new line.
 
-        // genre and new artist are accessed outside of the object "person". 
-        // The console log use the "\n" escape sequences to display text in new line.
+const genre = "Gospel";
+const newArtist = "FAZE";
 
-        const genre = "Gospel";
-        const newArtist = "FAZE";
-        const yrPerform = 97; //questions on performing arithmetic with this variable and person.age
-        //OBJECT Literal
-        let person = {
-            name: "Peggy",
-            age: 42,
-            occupation: "artist",
-            numHits: 15
-        }
+let answer = "NO";
+//OBJECT Literal
+let person = {
+  name: "Peggy",
+  age: 42,
+  occupation: "artist",
+  numHits: 15,
+  yrPerform: 1997, //questions on performing arithmetic with this variable and person.age
+};
+const performanceYears = new Date();
+const currentYear = performanceYears.getFullYear(); //Use the getFullYear function in JavaScript to access full year for calculations
+//Boolean Literal
+const mayBe = currentYear - person.yrPerform;
+console.log(currentYear);
+console.log(mayBe);
+if (mayBe > 10) {
+  answer = "YES";
+  console.log(answer);
 
-        //Boolean Literal
-        const mayBe = yrPerform > 2000;
-        console.log("Has this artist been performing over 10 years?", + mayBe);
-        //7-Use template literals for string interpolation and multi-line strings.
-        console.log(`The named ${person.occupation}, "${person.name}" made her debut at the age of \n${person.age} and her ${genre} music is now ranking ${person.numHits} on the music charts.\nThe ${person.occupation}, ${newArtist} appeard on the set 5 years prior to\n${person.name}s' first appearance.`);
+  console.log(
+    `Artist ${person.name} began performing in ${person.yrPerform}. The Current year is ${currentYear}. This artist has been performing for ${mayBe} years`
+  );
+  console.log("Has this artist been performing over 10 years?", answer);
+} else {
+  console.log("This artist has not been performing over 10 years!");
+}
+console.log("-------------------------");
 
-        //3-Use arithmetic operators to manipulate data.
-        let timeLapse = yrPerform - person.age;
-        console.log(`At ${timeLapse} years is a young age to break into this business so\n${person.name}'s is going to be OK!`)
+//7-Use template literals for string interpolation and multi-line strings.
+console.log(
+  `The named ${person.occupation}, "${person.name}" made her debut at the age of \n${person.age} and her ${genre} music is now ranking ${person.numHits} on the music charts.\nThe ${person.occupation}, ${newArtist} appeard on the set 5 years prior to\n${person.name}s' first appearance.`
+);
 
-        //4-Use comparison operators to compare data.
-        const genreLarge = genre > "RNB";
-        console.log("Is genre > than Gospel?", genreLarge); //answer is false
+//3-Use arithmetic operators to manipulate data.
+let timeLapse = person.yrPerform - person.age;
+console.log(
+  `At ${timeLapse} years is a young age to break into this business so\n${person.name}'s is going to be OK!`
+);
 
-        // 6-Implement escape sequences in strings for special characters.
-        const summary = "This summary covers the last 5 years of\n" +
-            "an artists work that has gone unnoticed for years. \n" +
-            "This artist and her talents entertain the old and the yourng\n" +
-            "and this is one music producer who can't wait to see whats next for her. \n";
-        console.log(summary);
+//4-Use comparison operators to compare data.
+const genreLarge = genre > "RNB";
+console.log("Is genre > than Gospel?", genreLarge); //answer is false
 
- // The initial numbers that must be verified.
+// 6-Implement escape sequences in strings for special characters.
+const summary =
+  "This summary covers the last 5 years of\n" +
+  "an artists work that has gone unnoticed for years. \n" +
+  "This artist and her talents entertain the old and the yourng\n" +
+  "and this is one music producer who can't wait to see whats next for her. \n";
+console.log(summary);
+
+// The initial numbers that must be verified.
 const n1 = 10;
 const n2 = 15;
 const n3 = 20;
@@ -134,6 +162,7 @@ console.log(
 );
 const isOver25 = n1 != 25 || n2 != 25 || n3 != 25 || n4 != 25;
 const myIsOver25 = !(n1 === 25 && n2 === 25 && n3 === 25 && n4 === 25);
+
 console.log(
   `The equation looks like this:  "const myIsOver25 = !(n1 === 25 && n2 === 25 && n3 === 25 && n4 === 25);"`
 );
@@ -149,9 +178,9 @@ console.log(
 );
 console.log(``);
 console.log("ALAB 308.1.1 - PART 2 PRACTICAL MATH");
-console.log("");       
+console.log("");
 
-        //                     Objective - You are planning a cross-country road trip!
+//   PART 2                  Objective - You are planning a cross-country road trip!
 //
 // The distance of the trip, in total, is 1,500 miles.
 // Your car’s fuel efficiency is as follows:
@@ -167,62 +196,72 @@ console.log("");
 // Compare the results when traveling at an average of 55, 60, and 75 miles per hour. Which makes the most sense for the trip?
 // Log the results of your calculations using string concatenation or template literals.
 
-
-const distance = 1500;
-const mphA = 55;
-const mphB = 60;
-const mphC = 75;
-const mpgA = 30;
-const mpgB = 28;
-const mpgC = 23;
-const fuelCost = 3.00;
-let budget = 175.00;
+let distance = 1500;
+let mphA = 55;
+let mphB = 60;
+let mphC = 75;
+let mpgA = 30;
+let mpgB = 38;
+let mpgC = 23;
+let fuelCost = 3.0;
+let budget = 175.0;
 
 //How many gallons of fuel will you need for the entire trip?
-const galA = distance / mpgA;/*gallons of gas needed for the trip*/
-const galB = distance / mpgB;/*gallons of gas needed for the trip*/
-const galC = distance / mpgC;/*gallons of gas needed for the trip*/
-console.log("distance times mpgA for gallons of gas before rounding = ", galA);
-console.log("distance times mpgB for gallons of gas before rounding = ", galB);
-console.log("distance times mpgC for gallons of gas before rounding = ", galC);
+const galA = distance / mpgA; /*gallons of gas needed for the trip*/
+const galB = distance / mpgB; /*gallons of gas needed for the trip*/
+const galC = distance / mpgC; /*gallons of gas needed for the trip*/
 
+//Use Math.round function to round the distance traveled per gallon of gas
+const galARound = Math.round(galA); //Rounded gallons of gas A
+const galBRound = Math.round(galB); //Rounded gallons of gas B
+const galCRound = Math.round(galC); //Rounded gallons of gas C
 
-const galARound = Math.round(galA);//round gallons of gas A
-const galBRound = Math.round(galB);
-const galCRound = Math.round(galC);
-console.log("galA gallons of gas needed after rounding", galARound);
-console.log("galB gallons of gas needed after rounding", galBRound);
-console.log("galC gallons of gas needed after rounding", galCRound);
+// console.log("galA gallons of gas needed after rounding", galARound);
+// console.log("galB gallons of gas needed after rounding", galBRound);
+// console.log("galC gallons of gas needed after rounding", galCRound);
 console.log(" ");
-//least amount of gas compared between each driving mpg needed for trip
-const bestGasAmount = Math.min(galA,galB,galC);//This code uses the Math.min function to find the smallest amount of gallons of gas to complete the trip
-console.log("best fuel Cost compared to all 3 mpg equations", bestGasAmount);
+
+console.log(
+  `Driving ${distance} miles at ${mphA} miles per hour, using ${mpgA} miles per gallon of gas\n ,${galARound} gallons of gas needed for entire trip.`
+);
+console.log(
+  `Driving ${distance} miles at ${mphB} miles per hour, using ${mpgB} miles per gallon of gas\n  ${galBRound} gallons of gas needed for entire trip.`
+);
+console.log(
+  `Driving ${distance} miles at ${mphC} miles per hour, using ${mpgC} miles per gallon of gas\n  ${galCRound} gallons of gas needed for entire trip.`
+);
+
+//Determine trip with least amount of fuel needed
+const bestGasAmount = Math.min(galARound, galBRound, galCRound); //This code uses the Math.min function to find the smallest amount of gallons of gas to complete the trip
+console.log(
+  "best fuel amount needed compared to all 3 mpg equations",
+  bestGasAmount
+);
 console.log(" ");
 
 //Calculate Total Fuel Cost for each mph trip
-let gasCostA = galARound * fuelCost;//gasCost of gas driving 55 mph
-let gasCostB = galBRound * fuelCost;//gasCost of gas driving 60 mph
-let gasCostC = galCRound * fuelCost;//gasCost of gas driving 75 mph
+const gasCostB = galBRound * fuelCost; //gasCost of gas driving 60 mph
+const gasCostA = galARound * fuelCost; //gasCost of gas driving 55 mph
+const gasCostC = galCRound * fuelCost; //gasCost of gas driving 75 mph
 
-console.log("gasCost of gasARound using galARound * fuelCost equation is $", gasCostA);
-console.log("gasCost of gasBRound using galBRound * fuelCost equation is $", gasCostB);
-console.log("gasCost of gasCRound using galCRound * fuelCost equation is $", gasCostC);
+// console.log("gasCost of gasARound using galARound * fuelCost equation is $", gasCostA);
+// console.log("gasCost of gasBRound using galBRound * fuelCost equation is $", gasCostB);
+// console.log("gasCost of gasCRound using galCRound * fuelCost equation is $", gasCostC);
 
-console.log(" ");
-//smallest gasCost of fuel compared to all the trips
-const bestFuel = Math.min( gasCostA,gasCostB,gasCostC);//This code uses the Math.min function to find the least gasCost for fuel
+// console.log(" ");
+//Determine trip that will cost the least amount of money for fuel
+const bestFuel = Math.min(gasCostA, gasCostB, gasCostC); //This code uses the Math.min function to find the least gasCost for fuel
+
 const bestFuelRound = Math.round(bestFuel);
-console.log("Trip with cheapest gas gasCost is ", bestFuelRound);
-console.log("");
 
 //How long will the trip take, in hours?
 const tripTimeA = distance / mphA;
 const tripTimeB = distance / mphB;
 const tripTimeC = distance / mphC;
-console.log("The time for tripA before rounding is " + tripTimeA);
-console.log("The time for tripB before rounding is " + tripTimeB);
-console.log("The time for tripC before rounding is " + tripTimeC);
-console.log(" ");
+// console.log("The time for tripA before rounding is " + tripTimeA);
+// console.log("The time for tripB before rounding is " + tripTimeB);
+// console.log("The time for tripC before rounding is " + tripTimeC);
+// console.log(" ");
 //use Math.min function to round up tripTime
 const bestTripRoundA = Math.round(tripTimeA);
 const bestTripRoundB = Math.round(tripTimeB);
@@ -233,107 +272,114 @@ console.log("The time for tripC after rounding is " + bestTripRoundC);
 
 console.log(" ");
 //Calculate Fastest trip time using Math.min function and round up number using Math.round
-const bestTrip = Math.min( bestTripRoundA,bestTripRoundB,bestTripRoundC);//This code uses the Math.min function to find the smallest number result for trip time.
+const bestTrip = Math.min(bestTripRoundA, bestTripRoundB, bestTripRoundC); //This code uses the Math.min function to find the smallest number result for trip time.
 const bestTripRound = Math.round(bestTrip);
 console.log("Lowest Trip Travel time is ", bestTripRound);
 console.log(" ");
 
 //Subtract the gasCost of fuel(gasCostA,gasCostB,gasCostC) from the budget to see if you are within your budget(Amount of money left over after purchasing gas)
-const balanceOfmoneyLeftA = budget - gasCostA;//budget for gas driving 55ph - gasCost of gas
-const balanceOfmoneyLeftB= budget - gasCostB;//budget for gas driving 60 mph - gasCost of gas
-const balanceOfmoneyLeftC= budget - gasCostC;//budget for gas driving 75 mph - gasCost of gas
-console.log("Amount of money left after purchasing gas for tripA is ", balanceOfmoneyLeftA);
-console.log("Amount of money left after purchasing gas for tripB is ", balanceOfmoneyLeftB);
-console.log("Amount of money left after purchasing gas for tripC is ", balanceOfmoneyLeftC);
-//use Math.round to round up the gasCost left over
-// const answerRoundA = Math.round(balanceOfmoneyLeftA);
-// const answerRoundB = Math.round(balanceOfmoneyLeftB);
-// const answerRoundC = Math.round(balanceOfmoneyLeftC);
+const balanceOfmoneyLeftA = budget - gasCostA; //budget for gas driving 55ph - gasCost of gas
+const balanceOfmoneyLeftB = budget - gasCostB; //budget for gas driving 60 mph - gasCost of gas
+const balanceOfmoneyLeftC = budget - gasCostC; //budget for gas driving 75 mph - gasCost of gas
+console.log(
+  "Amount of money left after purchasing gas for tripA is ",
+  balanceOfmoneyLeftA
+);
+console.log(
+  "Amount of money left after purchasing gas for tripB is ",
+  balanceOfmoneyLeftB
+);
+console.log(
+  "Amount of money left after purchasing gas for tripC is ",
+  balanceOfmoneyLeftC
+);
+
 console.log(" ");
 
-// compare budget amount with gasCost of gas and console log 'yes' or 'no' if within budget or not
+let allOverBudget = true; //assume all gas price is over budget
 
-  
-// console.log(`OH NO!!! I'm over my budget!! My balance after purchasing gas is ${balanceOfmoneyLeftA}.`);
-// console.log(`OH NO!!! I'm over my budget!! My balance after purchasing gas is ${balanceOfmoneyLeftB}.`);
-// console.log(`OH NO!!! I'm over my budget!! My balance after purchasing gas is ${balanceOfmoneyLeftC}.`);
-
-// Will your budget be enough to cover the fuel expense? compare gasCost of gas to budget allowed  150 175
-let fuelExpenseCovered = "YES"; // Assume every gasCost is within budget by default
-let overBudget = false;
 // Check if gasCostA is Over-budget or is negative
 if (gasCostA > budget || gasCostA < 0) {
-//   answerOut = "NO"; // gasCost for trip A is over budget
-overBudget = true;
-fuelExpenseCovered = "NO";
-   console.log("Gas Cost A = ", gasCostA + " and is over my budget of " + budget);
-//   console.log("Answer out am I over my budget for gas Cost A = ", answerOut);
-//   console.log(`OH NO!!! The gas Cost of this trip is $${gasCostA}! I'm over my budget!! My balance after purchasing gas is $${balanceOfmoneyLeftA}.`);
-//   console.log(`I will need ${galARound} gallons of fuel for the entire trip driving ${mphA} miles per hour. Driving time would equal ${bestTripRoundA} hours.\n Is this trip within my spending budget of ${budget}? Answer: ${answerOut}! Money left over after buying gas $${balanceOfmoneyLeftA}`);
-    
+  console.log(
+    "Gas Cost A = ",
+    gasCostA + " and is over my budget of $" + budget + " for fuel "
+  );
+  console.log(
+    `I will need ${galARound} gallons of fuel for the entire trip driving ${mphA} miles per hour. Driving time would equal ${bestTripRoundA} hours.\n Is this trip within my spending budget of ${budget}? Answer: ${answerOut}! Money left over after buying gas $${balanceOfmoneyLeftA}`
+  );
+
   console.log(" ");
+} else {
+  allOverBudget = false;
+  console.log(
+    "I'm within my budget!! The amount I will pay for fuel is ",
+    gasCostA
+  );
 }
 
 // Check if gasCostB is Over-budget or is negative
 if (gasCostB > budget || gasCostB < 0) {
-//   answerOut = "NO"; // gasCost for trip B is over budget
-overBudget = true;
-fuelExpenseCovered = "NO";
-  console.log("Gas Cost B = ", gasCostB + " and is over my budget of "+ budget);
-//   console.log("Answer out am I over my budget for gas Cost B = ", answerOut);
-//   console.log(`OH NO!!! The gas Cost of this trip is $${gasCostB}! I'm over my budget!! My balance after purchasing gas is $${balanceOfmoneyLeftB}.`);
-//   console.log(`I will need ${galBRound} gallons of fuel for the entire trip driving ${mphB} miles per hour. Driving time would equal ${bestTripRoundB} hours.\n Is this trip within my spending budget of $${budget}? Answer: ${answerOut}! Money left over after buying gas $${balanceOfmoneyLeftB}`);
-//   console.log(" ");
+  console.log(
+    "Gas Cost B = ",
+    gasCostB + " and is over my budget of " + budget
+  );
+  
+} else {
+  allOverBudget = false;
+  console.log(
+    "I'm within my budget!! The amount I will pay for fuel is ",
+    gasCostB
+  );
 }
 
 // Check if gasCostC is Over-budget or is negative
 if (gasCostC > budget || gasCostC < 0) {
-//   answerOut = "NO"; // gasCost for trip C is over budget
-overBudget = true;
-fuelExpenseCovered = "NO";
-   console.log("Gas Cost C = ", gasCostC + " and is over my budget of " + budget);
-//   console.log("Answer out gasCostC = ", answerOut);
-//   console.log(`OH NO!!! The gasCost of this trip is $${gasCostC}! I'm over my budget!! My balance after purchasing gas is $${balanceOfmoneyLeftC}.`);
-//   console.log(`I will need ${galCRound} gallons of fuel for the entire trip driving ${mphC} miles per hour. Driving time would equal ${bestTripRoundC} hours.\n Is this trip within my spending budget of $${budget}? Answer: ${answerOut}! Money left over after buying gas $${balanceOfmoneyLeftC}`);
-} 
-// If none of the gasCosts are over-budget or negative, then gasCost is within the budget
-if (overBudget) {
-    
-  console.log("All Trip gasCosts are Over Budget!");
-}else{
-  console.log("I'm within my budget!! The amount I will pay for fuel is ", fuelExpenseCovered);
-  console.log(`The best plan for this trip is to get ${bestGasAmount} gallons of gas for ${bestFuel} dollars.`);
+  console.log(
+    "Gas Cost C = ",
+    gasCostC + " and is over my budget of " + budget
+  );
+  
+} else {
+  allOverBudget = false;
+  console.log(
+    "I'm within my budget!! The amount I will pay for fuel is ",
+    gasCostC
+  );
 }
 
-// if (gasCostA > budget || gasCostA < 0 || gasCostB > budget || gasCostB < 0 || gasCostC > budget || gasCostC < 0) {
-//     answerOut = "NO"; // If any gasCost is over budget or negative, set answerOut to "NO"
-//   }
+// If all of the gasCosts are over-budget or negative, then gasCost is notin  the budget
+if (allOverBudget) {
+  console.log("All Trip gas Costs are Over Budget!");
+}
 
-//least amount of money needed for trip
-// const bestBudget = Math.min( gasCostA,gasCostB,gasCostC);//This code uses the Math.min function to compare the amount for each trip and check if in my budget
-// const bestBudgetRound = Math.round(bestBudget);
+console.log(`The best trip for the best gas is ${bestFuelRound}.`);
+console.log(`Best trip with the best time is ${bestTripRound}`); //for this trip is to get ${bestGasAmount} gallons of gas for ${bestFuelRound} dollars.`);
 
-// console.log(`I will need ${galARound} gallons of fuel for the entire trip driving ${mphA} miles per hour. Driving time would equal ${bestTripRoundA} hours. The gas Cost of my trip is $${gasCostA}.\n 
-// Is this trip within my spending budget of $${budget}? Answer: ${answerOut} Money left over after buying gas ${balanceOfmoneyLeftA}`);
+let bestFuelMatch = true;
 
-// console.log(`I will need ${galBRound} gallons of fuel for the entire trip driving ${mphB} miles per hour. Driving time would equal ${bestTripRoundB} hours. The gas Cost of my trip is $${gasCostB}.\n 
-// Is this trip within my spending budget of $budget? Answer: ${answerOut} Money left over after buying gas ${balanceOfmoneyLeftB}`);
+console.log(typeof bestFuelRound);
+console.log(typeof gasCostA);
 
-// console.log(`I will need ${galCRound} gallons of fuel for the entire trip driving ${mphC} miles per hour. Driving time would equal ${bestTripRoundC} hours. The gas Cost of my trip is $${gasCostC}.\n 
-// Is this trip within my spending budget of $budget? Answer: ${answerOut} Money left over after buying gas ${balanceOfmoneyLeftC}`);
- 
-// console.log(`The best plan for this trip is to get ${bestGasAmount} gallons of gas for ${bestFuel} dollars.`);
+if (bestFuelRound === gasCostA) {
+  console.log(`Most efficient and affordable Trip is ${mpgA} miles per gallon, driving at ${mphA} miles per hour.Driver will purchase ${galARound} gallons of gas and pay $${gasCostA} for fuel.
+  Driver will have $${balanceOfmoneyLeftA} left from budget to spend. It will take ${bestTripRoundA} hours to drive the distance of ${distance}.`);
+} else {
+  bestFuelMatch = false;
+}
+if (bestFuelRound === gasCostB) {
+  console.log(`Most efficient and affordable Trip is ${mpgB} miles per gallon, driving at ${mphB} miles per hour.Driver will purchase ${galBRound} gallons of gas and pay $${gasCostB} for fuel.
+    Driver will have $${balanceOfmoneyLeftB} left from budget to spend. It will take ${bestTripRoundB} hours to drive the distance of ${distance}.`);
+} else {
+  bestFuelMatch = false;
+}
+if (bestFuelRound === gasCostC) {
+  (`Most efficient and affordable Trip is ${mpgC} miles per gallon, driving at ${mphC} miles per hour.Driver will purchase ${galCRound} gallons of gas and pay $${gasCost} for fuel.
+    Driver will have $${balanceOfmoneyLeftC} left from budget to spend. It will take ${bestTripRoundC} hours to drive the distance of ${distance}.`);
+} else {
+  bestFuelMatch = false;
+}
+if (bestFuelMatch) {
+  console.log("No trips match best fuel rounded " + bestFuelRound);
+}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
+console.log("END");
